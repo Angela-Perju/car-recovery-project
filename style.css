@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #0d3b66;
+    padding-top: 70px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #0d1b2a;
+}
+
+section {
+    background-color: #ffffff;
+}
+.hero {
+    margin-top: -70px;
+}
+.hero-banner {
+    background-image: url('media/1300.webp'); 
+    background-position: center bottom; 
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+    position: relative;
+}
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.call-btn, .whatsapp-btn {
+    position: fixed;
+    top: 90px;
+    z-index: 999;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.call-btn .text {
+    color: #000 !important;
+}
+
+.call-btn {
+    background-color: lightgrey;
+    right: 160px;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    right: 20px; }
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+}
+
+#services {
+    background-color: lightcyan;
+}
+
+#services .card {
+    border-radius: 25px;
+    border: none;
+}
+
+#about {
+  background-color: floralwhite;
+}
+
+#about img {
+    border-radius: 25px;
+}
+
+.btn {
+    border-radius: 50px;
+}
+
+#contact {
+    background-color: lightcyan;
+}
+
+footer {
+    background-color: #0d3b66;
+}
+
+@media (min-width: 1200px) {
+    .hero-banner {
+        height: 650px;
+        background-position: center bottom;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hero-banner {
+        height: 500px;
+        background-position: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 350px;
+        background-position: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .call-btn,
+    .whatsapp-btn {
+        position: fixed;
+        right: 15px;
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .call-btn {
+        top: 80px;
+    }
+
+    .whatsapp-btn {
+        top: 130px;
+    }
+
+}
