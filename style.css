@@ -1,52 +1,110 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    color: #0d3b66;
-    padding-top: 70px;
-}
+
+/* Body */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
     color: #0d1b2a;
+    padding-top: 70px;
 }
 
-section {
+/* Navbar fix */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
     background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
 }
+
+/* Container brand + butoane */
+.navbar .brand-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+}
+
+/* Buton Sună */
+.navbar .call-btn {
+    position: static;
+    background-color: red;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    flex-direction: row;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* Buton WhatsApp */
+.navbar .whatsapp-btn {
+    position: static;
+    background-color: #25d366;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* Hover efect pentru butoane */
+.navbar .call-btn:hover,
+.navbar .whatsapp-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
 .hero {
-    margin-top: -70px;
+    margin: 0;
+    padding: 0;
 }
+
 .hero-banner {
-    background-image: url('media/1300.webp'); 
-    background-position: center bottom; 
-    background-size: cover;
     width: 100%;
     height: 500px;
+    background-image: url('media/1300.webp');
+    background-size: cover;
+    background-position: center 10%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 40px;
     position: relative;
 }
+
+/* Overlay întunecat */
 .hero-banner::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.);
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
     z-index: 1;
 }
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
+
+/* Conținut hero */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -64,104 +122,50 @@ section {
     font-size: 1.2rem;
     margin-top: 10px;
 }
-.call-btn, .whatsapp-btn {
-    position: fixed;
-    top: 90px;
-    z-index: 999;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
 
-.call-btn .text {
-    color: #000 !important;
-}
-
-.call-btn {
-    background-color: lightgrey;
-    right: 160px;
-}
-
-.whatsapp-btn {
-    background-color: #25d366;
-    right: 20px; }
-
-.whatsapp-btn:hover {
-    transform: translateY(-2px);
-}
-
-#services {
-    background-color: lightcyan;
-}
-
-#services .card {
-    border-radius: 25px;
-    border: none;
-}
-
-#about {
-  background-color: floralwhite;
-}
-
-#about img {
-    border-radius: 25px;
-}
-
-.btn {
-    border-radius: 50px;
-}
-
-#contact {
-    background-color: lightcyan;
-}
-
-footer {
-    background-color: #0d3b66;
-}
-
+/* Responsive hero */
 @media (min-width: 1200px) {
     .hero-banner {
         height: 650px;
-        background-position: center bottom;
+        background-position: center 20%;
     }
 }
 
 @media (max-width: 1199px) {
     .hero-banner {
-        height: 500px;
-        background-position: center;
+        height: 600px;
+        background-position: center 20%;
     }
 }
 
 @media (max-width: 768px) {
+
     .hero-banner {
         height: 350px;
         background-position: center;
     }
+
+    .navbar .call-btn {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    .navbar .whatsapp-btn {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    .navbar .brand-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
-@media (max-width: 768px) {
-
-    .call-btn,
-    .whatsapp-btn {
-        position: fixed;
-        right: 15px;
-        padding: 8px 14px;
-        font-size: 14px;
-    }
-
-    .call-btn {
-        top: 80px;
-    }
-
-    .whatsapp-btn {
-        top: 130px;
-    }
-
-}
+/* Alte secțiuni exemple */
+#services { background-color: lightcyan; }
+#services .card { border-radius: 25px; border: none; }
+#about { background-color: floralwhite; }
+#about img { border-radius: 25px; }
+.btn { border-radius: 50px; }
+#contact { background-color: lightcyan; }
+footer { background-color: #0d3b66; }
