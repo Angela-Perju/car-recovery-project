@@ -1,80 +1,97 @@
+/* ================= GLOBAL RESET & VARS ================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+:root {
+    --primary-color: black;
+    --whatsapp-color: green;
+    --call-color: red;
+    --footer-bg: black;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
-    color: #0d1b2a;
-    padding-top: 70px;
+    color: var(--primary-color);
+    padding-top: 76px;
+    overflow-x: hidden;
 }
 
-/* Navbar fix */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: #ffffff;
+img {
+    max-width: 100%;
+}
+
+
+/* ================= NAVBAR & BUTTONS ================= */
+
+.navbar .container {
+    max-width: 1320px;
+}
+
+.brand-buttons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
+    gap: 12px;
 }
 
-/* Container brand + butoane */
-.navbar .brand-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 100%;
-}
-
-/* Buton Sună */
-.navbar .call-btn {
-    position: static;
-    background-color: red;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 12px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    flex-direction: row;
-    color: white;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-/* Buton WhatsApp */
+.navbar .call-btn,
 .navbar .whatsapp-btn {
-    position: static;
-    background-color: #25d366;
-    border-radius: 20px;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    padding: 5px 12px;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 14px;
     font-size: 0.85rem;
     font-weight: 500;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
-/* Hover efect pentru butoane */
+.navbar .call-btn {
+    background-color: var(--call-color);
+}
+
+.navbar .whatsapp-btn {
+    background-color: var(--whatsapp-color);
+}
+
+/* WhatsApp icon */
+
+.navbar .whatsapp-btn .icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-93.8-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 81.8-184.5 184.6-184.5 49.3 0 105.3 19.2 140.4 61.1 35.1 41.9 54.4 97.5 54.4 153.7-.2 102.1-84.5 184.9-184.7 184.9zm102.2-139.3c-5.6-2.8-33.1-16.3-38.3-18.2-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.2-18 22-3.3 3.8-6.6 4.3-12.2 1.4-5.6-2.8-23.7-8.7-45.2-26.7-16.7-14.9-28-33.3-31.3-39-3.3-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.6-5.8 8.5-8.7 2.8-2.8 3.8-4.8 5.6-8 1.9-3.3.9-6.1-.5-8.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.2-9.3-9.7-12.8-9.7-3.3 0-7.1-.4-10.9-.4-3.8 0-10 1.4-15.2 7.1-5.2 5.6-20 19.5-20 47.5s20.4 55.1 23.3 59c2.8 2.8 40.2 30.7 97.4 55.1 13.6 5.8 24.3 9.3 32.6 12 13.7 4.3 26.2 3.7 36.1 2.2 11-1.6 33.1-13.5 37.8-26.5 4.6-13 4.6-24.2 3.3-26.5-1.3-2.2-4.7-3.6-10.3-6.4z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+/* Button hover effects */
+
 .navbar .call-btn:hover,
 .navbar .whatsapp-btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
 }
 
-/* Hero Section */
+
+/* ================= HERO SECTION ================= */
+
 .hero {
     margin: 0;
     padding: 0;
@@ -82,120 +99,185 @@ body {
 
 .hero-banner {
     width: 100%;
-    height: 500px;
+    height: 520px;
     background-image: url('media/1300.webp');
     background-size: cover;
-    background-position: center 10%;
+    background-position: center 25%;
+    background-repeat: no-repeat;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     position: relative;
 }
 
-/* Overlay întunecat */
 .hero-banner::before {
     content: '';
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-/* Conținut hero */
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: white;
+    color: #ffffff;
+    padding: 0 15px;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
+    line-height: 1.2;
 }
 
 .hero-content p {
+    line-height: 1.6;
+}
+
+
+/* ================= SECTIONS STYLING ================= */
+
+#services {
+    background-color: #f4fcfc;
+}
+
+#services .card {
+    border-radius: 20px;
+    border: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#services .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#services .card img {
+    object-fit: contain;
+}
+
+#services .card h5 {
+    font-weight: 500;
+}
+
+#services .card p {
+    line-height: 1.6;
+}
+
+#about {
+    background-color: #fffdf9;
+}
+
+/* ================= ABOUT US IMAGE ================= */
+
+#about .row {
+    align-items: center;
+}
+
+/* Keep the image proportional and smaller beside the text */
+
+#about .col-md-6 img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    max-height: 300px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+/* About Us text */
+
+#about .col-md-6 p {
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+#about .col-md-6 p.lead {
     font-size: 1.2rem;
-    margin-top: 10px;
 }
 
-/* Responsive hero */
-@media (min-width: 1200px) {
-    .hero-banner {
-        height: 650px;
-        background-position: center 20%;
-    }
+
+/* ================= BUTTONS ================= */
+
+.btn {
+    border-radius: 50px;
 }
 
-@media (max-width: 1199px) {
-    .hero-banner {
-        height: 600px;
-        background-position: center 20%;
-    }
+
+/* ================= CONTACT ================= */
+
+#contact {
+    background-color: #f4fcfc;
 }
 
-@media (max-width: 768px) {
-
-    .hero-banner {
-        height: 350px;
-        background-position: center;
-    }
-
-    .navbar .call-btn {
-        padding: 4px 10px;
-        font-size: 0.75rem;
-    }
-
-    .navbar .whatsapp-btn {
-        padding: 4px 10px;
-        font-size: 0.75rem;
-    }
-
-    .navbar .brand-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+#contact p {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
-/* Alte secțiuni exemple */
-#services { background-color: lightcyan; }
-#services .card { border-radius: 25px; border: none; }
-#about { background-color: floralwhite; }
-#about img { border-radius: 25px; }
-.btn { border-radius: 50px; }
-#contact { background-color: lightcyan; }
-footer { background-color: #0d3b66; }
+#contact a:not(.btn) {
+    text-decoration: none;
+}
 
-/* OUR WORK / GALLERY */
+#contact a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+#contact .d-flex {
+    flex-wrap: wrap;
+}
+
+#contact iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: var(--footer-bg);
+    color: #ffffff;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+
+/* ================= OUR WORK / GALLERY ================= */
+
 #work {
     background-color: #ffffff;
 }
 
 #work h2 {
-    color: #0d1b2a;
+    color: var(--primary-color);
     font-weight: bold;
-}
-
-#work p {
-    color: #0d1b2a;
 }
 
 #work .card {
     border: none;
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 #work .work-image {
+    display: block;
     width: 100%;
     height: 250px;
     object-fit: cover;
-    display: block;
 }
 
 #work .card:hover {
@@ -203,9 +285,127 @@ footer { background-color: #0d3b66; }
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* OUR WORK - MOBILE */
+
+/* ================= LARGE SCREENS ================= */
+
+@media (min-width: 1200px) {
+    .hero-banner {
+        height: 600px;
+    }
+}
+
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 991px) {
+    body {
+        padding-top: 110px;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .brand-buttons {
+        gap: 8px;
+    }
+
+    .navbar .navbar-collapse {
+        flex-basis: 100%;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    .hero-banner {
+        height: 400px;
+        background-position: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+    }
+
+    /* Navbar buttons */
+
+    .brand-buttons {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .navbar .call-btn,
+    .navbar .whatsapp-btn {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+    }
+
+    /* Keep the phone button compact on mobile */
+
+    .navbar .call-btn span {
+        display: none;
+    }
+
+    .navbar .call-btn::after {
+        content: 'Call';
+    }
+
+    /* About Us image on mobile */
+
+  #about .col-md-6 img {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: none;
+    margin: 0 auto 20px;
+}
+    #about .col-md-6 p.lead {
+        font-size: 1.1rem;
+    }
+
+    /* Contact buttons */
+
+    #contact .d-flex {
+        gap: 8px;
+    }
+
+    #contact iframe {
+        width: 100%;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
 @media (max-width: 576px) {
+    .hero-banner {
+        height: 350px;
+    }
+
     #work .work-image {
         height: 230px;
+    }
+
+    #about .col-md-6 img {
+        max-height: 250px;
+    }
+
+    #contact .btn {
+        font-size: 0.8rem;
     }
 }
